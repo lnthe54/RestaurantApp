@@ -17,7 +17,7 @@ extension Bundle  {
         }
         
         //create property for the data
-        guard let data = try? Data(contentsOf: url) else{
+        guard let data = try? Data(contentsOf: url) else {
             fatalError("Failed to load \(file) from bundle")
         }
         

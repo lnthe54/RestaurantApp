@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		994CD56D28E71E75007DF1B7 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CD56C28E71E75007DF1B7 /* OnboardingViewModel.swift */; };
+		994CD56F28E73FC3007DF1B7 /* UserDataDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CD56E28E73FC3007DF1B7 /* UserDataDefaults.swift */; };
 		99E7B62E28E44150001D14F3 /* RestaurantAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E7B62D28E44150001D14F3 /* RestaurantAppApp.swift */; };
 		99E7B63028E44150001D14F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E7B62F28E44150001D14F3 /* ContentView.swift */; };
 		99E7B63228E44152001D14F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E7B63128E44152001D14F3 /* Assets.xcassets */; };
@@ -35,9 +37,14 @@
 		99FD5F9328E59957007F0D41 /* QualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FD5F9228E59957007F0D41 /* QualityView.swift */; };
 		99FD5F9528E59B5E007F0D41 /* QuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FD5F9428E59B5E007F0D41 /* QuantityView.swift */; };
 		99FD5F9728E59CF3007F0D41 /* AddToCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FD5F9628E59CF3007F0D41 /* AddToCartView.swift */; };
+		99FD5F9A28E5C29F007F0D41 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FD5F9928E5C29F007F0D41 /* OnboardingModel.swift */; };
+		99FD5F9C28E5C2EB007F0D41 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FD5F9B28E5C2EB007F0D41 /* OnboardingView.swift */; };
+		99FD5F9F28E5C309007F0D41 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FD5F9E28E5C309007F0D41 /* IntroView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		994CD56C28E71E75007DF1B7 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		994CD56E28E73FC3007DF1B7 /* UserDataDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataDefaults.swift; sourceTree = "<group>"; };
 		99E7B62A28E44150001D14F3 /* RestaurantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E7B62D28E44150001D14F3 /* RestaurantAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAppApp.swift; sourceTree = "<group>"; };
 		99E7B62F28E44150001D14F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +74,9 @@
 		99FD5F9228E59957007F0D41 /* QualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualityView.swift; sourceTree = "<group>"; };
 		99FD5F9428E59B5E007F0D41 /* QuantityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityView.swift; sourceTree = "<group>"; };
 		99FD5F9628E59CF3007F0D41 /* AddToCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartView.swift; sourceTree = "<group>"; };
+		99FD5F9928E5C29F007F0D41 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		99FD5F9B28E5C2EB007F0D41 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		99FD5F9E28E5C309007F0D41 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +152,7 @@
 		99E7B64428E441E3001D14F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				99FD5F9828E5C25C007F0D41 /* Onboarding */,
 				99FD5F8A28E587DF007F0D41 /* Detail */,
 				99E7B64528E4427B001D14F3 /* Home */,
 				99E7B62F28E44150001D14F3 /* ContentView.swift */,
@@ -185,6 +196,7 @@
 			children = (
 				99E7B65628E4468E001D14F3 /* AllFoods.json */,
 				99E7B65528E4468E001D14F3 /* food.json */,
+				994CD56E28E73FC3007DF1B7 /* UserDataDefaults.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -215,6 +227,25 @@
 				99FD5F9228E59957007F0D41 /* QualityView.swift */,
 				99FD5F9428E59B5E007F0D41 /* QuantityView.swift */,
 				99FD5F9628E59CF3007F0D41 /* AddToCartView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		99FD5F9828E5C25C007F0D41 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				99FD5F9D28E5C2FE007F0D41 /* Subviews */,
+				99FD5F9928E5C29F007F0D41 /* OnboardingModel.swift */,
+				99FD5F9B28E5C2EB007F0D41 /* OnboardingView.swift */,
+				994CD56C28E71E75007DF1B7 /* OnboardingViewModel.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		99FD5F9D28E5C2FE007F0D41 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				99FD5F9E28E5C309007F0D41 /* IntroView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -294,6 +325,7 @@
 				99E7B66428E44DFB001D14F3 /* FoodHorizontalView.swift in Sources */,
 				99E7B64F28E4436B001D14F3 /* HomeToolBar.swift in Sources */,
 				99E7B66628E454F6001D14F3 /* CustomShape.swift in Sources */,
+				994CD56F28E73FC3007DF1B7 /* UserDataDefaults.swift in Sources */,
 				99E7B65C28E446DA001D14F3 /* FoodTypeModel.swift in Sources */,
 				99E7B65128E4463A001D14F3 /* FeatureFoodView.swift in Sources */,
 				99FD5F8C28E587F1007F0D41 /* FoodDetailView.swift in Sources */,
@@ -302,6 +334,7 @@
 				99E7B64928E442B8001D14F3 /* Constant.swift in Sources */,
 				99E7B63A28E44152001D14F3 /* RestaurantApp.xcdatamodeld in Sources */,
 				99E7B63728E44152001D14F3 /* Persistence.swift in Sources */,
+				99FD5F9C28E5C2EB007F0D41 /* OnboardingView.swift in Sources */,
 				99E7B66828E457AB001D14F3 /* PopularFoodView.swift in Sources */,
 				99FD5F8F28E58810007F0D41 /* DetailToolBar.swift in Sources */,
 				99FD5F9128E58ABA007F0D41 /* HeaderView.swift in Sources */,
@@ -309,9 +342,12 @@
 				99E7B64728E44291001D14F3 /* HomeView.swift in Sources */,
 				99E7B65328E44646001D14F3 /* TopCard.swift in Sources */,
 				99FD5F9528E59B5E007F0D41 /* QuantityView.swift in Sources */,
+				994CD56D28E71E75007DF1B7 /* OnboardingViewModel.swift in Sources */,
 				99E7B64328E441B7001D14F3 /* Shop.swift in Sources */,
 				99E7B62E28E44150001D14F3 /* RestaurantAppApp.swift in Sources */,
 				99E7B66228E44B79001D14F3 /* AllFood.swift in Sources */,
+				99FD5F9A28E5C29F007F0D41 /* OnboardingModel.swift in Sources */,
+				99FD5F9F28E5C309007F0D41 /* IntroView.swift in Sources */,
 				99FD5F9328E59957007F0D41 /* QualityView.swift in Sources */,
 				99E7B64C28E442E1001D14F3 /* Color+Extension.swift in Sources */,
 				99FD5F9728E59CF3007F0D41 /* AddToCartView.swift in Sources */,

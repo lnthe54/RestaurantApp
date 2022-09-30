@@ -11,12 +11,17 @@ struct ContentView: View {
     
     // MARK: - PROPERTY
     @EnvironmentObject var shop: Shop
-    
+    private let isFirstInstall: Bool = UserDataDefaults.shared.isFirstInstall
+
     var body: some View {
-        if !shop.showingFood && shop.selectedFood == nil {
-            HomeView()
+        if isFirstInstall {
+            if !shop.showingFood && shop.selectedFood == nil {
+                HomeView()
+            } else {
+                FoodDetailView()
+            }
         } else {
-            FoodDetailView()
+            OnboardingView(viewModel: .init())
         }
     }
 }
