@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct FeatureFoodView: View {
+    
+    // MARK: - Property
+    @EnvironmentObject var viewModel: HomeViewModel
+    
     var body: some View {
         // MARK: - ZSTACK
         ZStack {
             TabView {
-                ForEach(Constant.FeaturedFoods) { food in
-                    TopCard(foodModel: food)
+                ForEach(viewModel.foodsBanner) { food in
+                    TopCard(food: food)
                 }
             }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         }
@@ -23,6 +27,7 @@ struct FeatureFoodView: View {
 struct FeatureFoodView_Previews: PreviewProvider {
     static var previews: some View {
         FeatureFoodView()
+            .environmentObject(HomeViewModel())
             .previewLayout(.sizeThatFits)
             .padding()
     }

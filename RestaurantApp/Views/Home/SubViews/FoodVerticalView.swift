@@ -12,7 +12,7 @@ struct FoodVerticalView: View {
     // MARK: - PROPERTY
     @EnvironmentObject var shop: Shop
     
-    let food: AllFoodObject
+    let food: PopularFoodObject
     
     var body: some View {
         // MARK: - ZSTACK

@@ -8,7 +8,7 @@
     "image" : "beef-burger",
     "price" : "9.20",
     "description" : "A traditional ground beef burger can be a good, high-protein meal—especially if it's grass-finished beef, which we'll tell you more about in a second.",
-    "OtherTypes" : [
+    "OtherFoods" : [
         
         {
             "id" : 1,
@@ -38,7 +38,7 @@
     "image" : "cheese-pizza",
     "price" : "9.20",
     "description" : "To up the nutrients in cheese pizza, choose a whole-grain crust when possible and go “easy” on any high-fat cheese.",
-    "OtherTypes" : [
+    "OtherFoods" : [
         
         {
             "id" : 1,
@@ -68,7 +68,7 @@
     "image" : "chicken_fruits2",
     "price" : "51.55",
     "description" : "all nutrition based on a combination of chicken available at Wegman’s and Wild Fork. Calories & nutrition will vary based on the specific source.",
-    "OtherTypes" : [
+    "OtherFoods" : [
         
         {
             "id" : 1,

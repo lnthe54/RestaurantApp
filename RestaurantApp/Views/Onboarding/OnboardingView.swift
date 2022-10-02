@@ -38,7 +38,7 @@ struct OnboardingView: View {
                         }
                         .padding(.bottom, 30)
                         .fullScreenCover(isPresented: $isOpenHome) {
-                            HomeView()
+                            HomeView(viewModel: HomeViewModel())
                         }
                     }
 

@@ -15,7 +15,7 @@ struct Constant {
     static let colorFFBC0B: Color = Color(hex: "#FFBC0B") // Yellow
     
     // MARK: - DATA TEST
-    static let FeaturedFoods: [FoodTypeModel] = Bundle.main.decode("food.json")
-    static let AllFoods: [AllFoodObject] = Bundle.main.decode("AllFoods.json")
-    static let AllOtherTypes = [AllOtherTypesObject].self
+    static let FeaturedFoods: [FoodOject] = Bundle.main.decode("food.json")
+    static let AllFoods: [PopularFoodObject] = Bundle.main.decode("AllFoods.json")
+    static let AllOtherTypes = [PopularFoodOtherObject].self
 }

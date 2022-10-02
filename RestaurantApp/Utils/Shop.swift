@@ -10,6 +10,6 @@ import Foundation
 class Shop: ObservableObject {
     
     @Published var showingFood: Bool = false
-    @Published var selectedFood: AllFoodObject? = nil
-    @Published var selectedSubFood: AllOtherTypesObject? = nil
+    @Published var selectedFood: PopularFoodObject? = nil
+    @Published var selectedSubFood: PopularFoodOtherObject? = nil
 }

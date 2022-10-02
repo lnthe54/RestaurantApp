@@ -10,13 +10,13 @@ import SwiftUI
 struct FoodHorizontalView: View {
     
     // MARK: - PROPERTY
-    let otherFoodtype: AllFoodObject
+    let otherFoods: [PopularFoodOtherObject]
     @EnvironmentObject var shop : Shop
     
     var body: some View {
         // MARK: - VSTACK
         VStack(alignment: .center) {
-            ForEach(otherFoodtype.OtherTypes) { food in
+            ForEach(otherFoods) { food in
                 // MARK: - CONTENT VIEW
                 VStack(alignment: .center) {
                     Text(food.name)
@@ -84,10 +84,3 @@ struct FoodHorizontalView: View {
     }
 }
 
-struct FoodHorizontalView_Previews: PreviewProvider {
-    static var previews: some View {
-        FoodHorizontalView(otherFoodtype: Constant.AllFoods[0])
-            .previewLayout(.sizeThatFits)
-            .environmentObject(Shop())
-    }
-}

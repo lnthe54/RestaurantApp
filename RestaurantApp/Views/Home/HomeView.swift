@@ -9,6 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     
+    // MARK: - Property
+    @ObservedObject var viewModel: HomeViewModel
+
     var body: some View {
         // MARK: - VSTACK
         VStack {
@@ -33,9 +36,11 @@ struct HomeView: View {
                     FeatureFoodView()
                         .frame(height: 135)
                         .padding(12)
+                        .environmentObject(viewModel)
                     
                     PopularFoodView()
                         .padding()
+                        .environmentObject(viewModel)
                 }
             }
             
@@ -44,11 +49,14 @@ struct HomeView: View {
         } // MARK: - END VSTACK
         .background(Constant.colorEFEFEF)
         .edgesIgnoringSafeArea(.all)
+        .onAppear {
+            viewModel.onAppear()
+        }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(viewModel: HomeViewModel())
     }
 }

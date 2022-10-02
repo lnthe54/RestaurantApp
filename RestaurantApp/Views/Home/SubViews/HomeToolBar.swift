@@ -16,14 +16,11 @@ struct HomeToolBar: View {
         
         // MARK: - HSTACK
         HStack(alignment: .center, spacing: 16) {
-            // MARK: - MENU BUTTON
-            Button {
-                // Action
-            } label: {
-                Image(systemName: "rectangle.grid.2x2.fill")
-                    .font(.title2)
-            } // MARK: - END MENU BUTTON
-            .foregroundColor(.black)
+            
+            Text("Chào buổi sáng, Bạn!")
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundColor(.black)
             
             Spacer()
             

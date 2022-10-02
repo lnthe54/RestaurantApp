@@ -10,7 +10,7 @@ import SwiftUI
 struct TopCard: View {
     
     // MARK: - PROPERTY
-    let foodModel: FoodTypeModel
+    let food: FoodOject
     
     var body: some View {
         
@@ -23,7 +23,7 @@ struct TopCard: View {
                 // MARK: - VSTACK CONTENT
                 VStack(alignment: .center, spacing: 12) {
                     // MARK: - HEAD LINE
-                    Text(foodModel.headline)
+                    Text(food.headline)
                         .font(.subheadline)
                         .foregroundColor(Color.black)
                         .fontWeight(.semibold)
@@ -48,7 +48,7 @@ struct TopCard: View {
                 } // MARK: - END VSTACK CONTENT
                 
                 // MARK: - IMAGE
-                Image(foodModel.image)
+                Image(food.image)
                     .resizable()
                     .scaledToFit()
                     .frame(height: 120, alignment: .center)
@@ -64,7 +64,7 @@ struct TopCard: View {
 
 struct TopCard_Previews: PreviewProvider {
     static var previews: some View {
-        TopCard(foodModel: Constant.FeaturedFoods[0])
+        TopCard(food: Constant.FeaturedFoods[0])
             .previewLayout(.sizeThatFits)
     }
 }

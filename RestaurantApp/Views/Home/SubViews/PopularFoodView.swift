@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PopularFoodView: View {
     // MARK: - PROPERTY
-    @EnvironmentObject var shop: Shop
+    @EnvironmentObject var homeViewModel: HomeViewModel
     
     var body: some View {
         ZStack {
@@ -27,7 +27,7 @@ struct PopularFoodView: View {
                 }
                 
                 VStack {
-                    ForEach(Constant.AllFoods) { food in
+                    ForEach(homeViewModel.popularFoods) { food in
                         HStack(alignment: .center, spacing: 4) {
                             FoodVerticalView(food: food)
                                 .background(Color.white.clipShape(CornerRadiusShape()))
@@ -35,7 +35,7 @@ struct PopularFoodView: View {
                             
                             Spacer()
                             
-                            FoodHorizontalView(otherFoodtype: food)
+                            FoodHorizontalView(otherFoods: food.OtherFoods)
                         }
                     }
                     .padding(10)
@@ -50,6 +50,6 @@ struct PopularView_Previews: PreviewProvider {
         PopularFoodView()
             .previewLayout(.sizeThatFits)
             .padding()
-            .environmentObject(Shop())
+            .environmentObject(HomeViewModel())
     }
 }

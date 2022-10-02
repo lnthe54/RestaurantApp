@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         if isFirstInstall {
             if !shop.showingFood && shop.selectedFood == nil {
-                HomeView()
+                HomeView(viewModel: HomeViewModel())
             } else {
                 FoodDetailView()
             }
