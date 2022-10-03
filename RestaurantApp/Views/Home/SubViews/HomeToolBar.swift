@@ -10,14 +10,16 @@ import SwiftUI
 struct HomeToolBar: View {
     
     // MARK: - PROPERTY
-    
+    @EnvironmentObject var viewModel: HomeViewModel
+
     // MARK: - BODY
     var body: some View {
         
         // MARK: - HSTACK
         HStack(alignment: .center, spacing: 16) {
+            let timeText: String = self.viewModel.timeText
             
-            Text("Chào buổi sáng, Bạn!")
+            Text("\(timeText), Bạn!")
                 .font(.title2)
                 .fontWeight(.bold)
                 .foregroundColor(.black)

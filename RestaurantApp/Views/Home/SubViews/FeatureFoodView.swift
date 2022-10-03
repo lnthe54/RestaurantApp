@@ -11,15 +11,36 @@ struct FeatureFoodView: View {
     
     // MARK: - Property
     @EnvironmentObject var viewModel: HomeViewModel
+    @State var slide = 1
+    @State var forward = true
     
     var body: some View {
         // MARK: - ZSTACK
-        ZStack {
-            TabView {
-                ForEach(viewModel.foodsBanner) { food in
-                    TopCard(food: food)
+        TabView(selection: $slide) {
+            ForEach(viewModel.foodsBanner) { food in
+                TopCard(food: food)
+                    .tag(food.id)
+            }
+        }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        .onAppear {
+            autoSwitchTab()
+        }
+    }
+    
+    private func autoSwitchTab() {
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
+            if forward {
+                slide += 1
+                if slide == viewModel.foodsBanner.count {
+                    forward = false
                 }
-            }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            } else {
+                slide -= 1
+                if slide == 0 {
+                    forward = true
+                }
+            }
         }
     }
 }

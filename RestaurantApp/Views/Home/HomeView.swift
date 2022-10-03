@@ -19,6 +19,7 @@ struct HomeView: View {
             HomeToolBar()
                 .padding(8)
                 .padding(.top, 56)
+                .environmentObject(viewModel)
             
             // MARK: - TITLE
             HStack {
@@ -34,8 +35,7 @@ struct HomeView: View {
                 VStack {
                     
                     FeatureFoodView()
-                        .frame(height: 135)
-                        .padding(12)
+                        .frame(height: 145)
                         .environmentObject(viewModel)
                     
                     PopularFoodView()

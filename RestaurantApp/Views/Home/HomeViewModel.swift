@@ -11,7 +11,8 @@ class HomeViewModel: ObservableObject {
     // MARK: Property
     @Published var foodsBanner: [FoodOject] = []
     @Published var popularFoods: [FoodOject] = []
-
+    @Published var timeText: String = ""
+    
     private var foodService: FoodService
     
     init(_ foodsBanner: [FoodOject] = [], foodService: FoodService = FoodService()) {
@@ -20,6 +21,7 @@ class HomeViewModel: ObservableObject {
     }
 
     func onAppear() {
+        getTextFromTime()
         getAllData()
     }
     
@@ -40,6 +42,21 @@ class HomeViewModel: ObservableObject {
         
         group.notify(queue: .main) {
             // Update
+        }
+    }
+    
+    private func getTextFromTime() {
+        let hour = Calendar.current.component(.hour, from: Date())
+
+        switch hour {
+        case 6..<13 :
+            timeText = "Chào buổi sáng"
+        case 13..<17:
+            timeText = "Chào buổi chiều"
+        case 17..<22:
+            timeText = "Chào buổi tối"
+        default:
+            timeText = ""
         }
     }
 }
