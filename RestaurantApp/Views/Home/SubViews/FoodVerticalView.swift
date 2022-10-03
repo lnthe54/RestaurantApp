@@ -10,9 +10,7 @@ import SwiftUI
 struct FoodVerticalView: View {
     
     // MARK: - PROPERTY
-    @EnvironmentObject var shop: Shop
-    
-    let food: PopularFoodObject
+    let food: FoodOject
     
     var body: some View {
         // MARK: - ZSTACK
@@ -31,15 +29,17 @@ struct FoodVerticalView: View {
                     .scaledToFit()
                     .frame(width: 140, height: 140)
                 
-                HStack {
-                    Image(systemName: "dot.square")
-                        .foregroundColor(Color.green)
-                    
-                    Spacer()
-                }
+                // MARK: - RATING VIEW
+                HStack(spacing: 5) {
+                    ForEach(0..<food.stars) { _ in
+                        Image(systemName: "star.fill")
+                            .foregroundColor(.yellow)
+                    }
+                    .padding(.bottom)
+                } // MARK: - END RATING VIEW
                 
-                HStack(spacing: 0) {
-                    Text("$")
+                HStack(spacing: 5) {
+                    Text("vnd")
                         .foregroundColor(Constant.colorPimary)
                         .font(.headline)
                         .fontWeight(.bold)
@@ -53,12 +53,7 @@ struct FoodVerticalView: View {
                     Button {
                         // Action
                         withAnimation(.easeOut) {
-                            UserDefaults.standard.set(food.name, forKey: "name")
-                            UserDefaults.standard.set(food.image, forKey: "image")
-                            UserDefaults.standard.set(food.price, forKey: "price")
-                            UserDefaults.standard.set(food.description, forKey: "description")
-                            shop.selectedFood = food
-                            shop.showingFood = true
+                            // Add to cart
                         }
                     } label: {
                         Spacer()
@@ -85,6 +80,5 @@ struct FoodVerticalView_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
             .frame(width: 180)
             .padding()
-            .environmentObject(Shop())
     }
 }

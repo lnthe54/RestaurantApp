@@ -10,16 +10,11 @@ import SwiftUI
 struct ContentView: View {
     
     // MARK: - PROPERTY
-    @EnvironmentObject var shop: Shop
     private let isFirstInstall: Bool = UserDataDefaults.shared.isFirstInstall
 
     var body: some View {
         if isFirstInstall {
-            if !shop.showingFood && shop.selectedFood == nil {
-                HomeView(viewModel: HomeViewModel())
-            } else {
-                FoodDetailView()
-            }
+            HomeView(viewModel: HomeViewModel())
         } else {
             OnboardingView(viewModel: .init())
         }
@@ -29,6 +24,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(Shop())
     }
 }

@@ -9,15 +9,15 @@ import SwiftUI
 
 struct HeaderView: View {
     // MARK: - PROPERTY
-    @EnvironmentObject var shop: Shop
+    let food: FoodOject
     
     var body: some View {
         VStack {
-            Text((shop.selectedFood?.name ?? UserDefaults.standard.string(forKey: "name"))!)
+            Text(food.name)
                 .font(.title)
                 .fontWeight(.bold)
             
-            Text((shop.selectedFood?.description ?? UserDefaults.standard.string(forKey: "description"))!)
+            Text(food.description)
                 .font(.system(size: 16))
                 .fontWeight(.semibold)
                 .foregroundColor(Color.gray)
@@ -27,8 +27,7 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView()
-            .environmentObject(Shop())
+        HeaderView(food: Constant.FeaturedFoods[0])
             .previewLayout(.sizeThatFits)
             .padding()
     }

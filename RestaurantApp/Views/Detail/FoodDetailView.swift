@@ -9,22 +9,38 @@ import SwiftUI
 
 struct FoodDetailView: View {
     // MARK: - PROPERTY
-    @EnvironmentObject var shop: Shop
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    let food: FoodOject
+    
     @State private var isAnim: Bool = false
     
     var body: some View {
         // MARK: - VSTACK
         VStack {
             // MARK: - TOOLBAR
-            DetailToolBar()
-                .padding()
-                .padding(.top, 44)
+            HStack(alignment: .center, spacing: 16) {
+                // MARK: - BACK BUTTON
+                Button {
+                    // Action
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.title)
+                }
+                .foregroundColor(.black)
+                Spacer()
+            }
+            .padding()
+            .padding(.top, 44)
             
             // MARK: - CONTENT
             VStack(alignment: .center, spacing: 0) {
                 
                 // MARK: - IMAGE
-                Image((shop.selectedFood?.image ?? UserDefaults.standard.string(forKey: "image"))!)
+                Image(food.image)
                     .resizable()
                     .scaledToFit()
                     .offset(y: isAnim ? 0 : -35)
@@ -32,27 +48,22 @@ struct FoodDetailView: View {
             
                 ScrollView(showsIndicators: false) {
                     // MARK: - HEADER
-                    HeaderView()
+                    HeaderView(food: food)
                         .padding()
                     
                     HStack(alignment: .center, spacing: 0) {
-                        Text("$")
+                        Text("VND")
                             .foregroundColor(Constant.colorPimary)
                             .font(.title2)
                             .fontWeight(.bold)
                         
-                        Text((shop.selectedFood?.price ?? UserDefaults.standard.string(forKey: "price"))!)
+                        Text(food.price)
                             .font(.title2)
                             .fontWeight(.bold)
                     }
                     
-                    // MARK: - QUALITY BUTTON
-    //                QualityView()
-    //                    .padding()
-                    
                     // MARK: - QUANTITY BUTTON
                     QuantityView()
-    //                    .padding()
                 }
                 
                // MARK: - ADD TO CART
@@ -76,7 +87,6 @@ struct FoodDetailView: View {
 
 struct FoodDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodDetailView()
-            .environmentObject(Shop())
+        FoodDetailView(food: Constant.FeaturedFoods[0])
     }
 }

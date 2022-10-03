@@ -11,34 +11,35 @@ struct PopularFoodView: View {
     // MARK: - PROPERTY
     @EnvironmentObject var homeViewModel: HomeViewModel
     
+    @State private var selectedFood: FoodOject!
+    
+    private var gridItems = [GridItem(.flexible()), GridItem(.flexible())]
+
     var body: some View {
         ZStack {
             VStack {
                 HStack {
-                    Text("Popular")
-                        .font(.title)
+                    Text("Phổ biến")
+                        .font(.title2)
                         .fontWeight(.bold)
                     
                     Spacer()
-                    
-                    Text("See All")
-                        .foregroundColor(.gray)
-                        .fontWeight(.medium)
                 }
                 
-                VStack {
+                LazyVGrid(columns: gridItems, spacing: 10) {
                     ForEach(homeViewModel.popularFoods) { food in
-                        HStack(alignment: .center, spacing: 4) {
+                        Button {
+                            self.selectedFood = food
+                        } label: {
                             FoodVerticalView(food: food)
                                 .background(Color.white.clipShape(CornerRadiusShape()))
                                 .shadow(radius: 4)
-                            
-                            Spacer()
-                            
-                            FoodHorizontalView(otherFoods: food.OtherFoods)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .fullScreenCover(item: $selectedFood) { selected in
+                            FoodDetailView(food: selected)
                         }
                     }
-                    .padding(10)
                 }
             }
         }

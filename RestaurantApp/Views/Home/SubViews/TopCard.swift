@@ -11,7 +11,8 @@ struct TopCard: View {
     
     // MARK: - PROPERTY
     let food: FoodOject
-    
+    @State private var isOpenDetail: Bool = false
+
     var body: some View {
         
         // MARK: - VSTACK
@@ -31,10 +32,11 @@ struct TopCard: View {
                     // MARK: - BUY NOW BUTTON
                     Button {
                         // Action
+                        self.isOpenDetail = true
                     } label: {
                         // MARK: - BUY NOW ZSTACK
                         ZStack {
-                            Text("   Buy Now  ")
+                            Text(" Mua ngay ")
                                 .font(.body)
                                 .fontWeight(.bold)
                         } // MARK: - END BUY NOW ZSTACK
@@ -45,6 +47,9 @@ struct TopCard: View {
                         .shadow(color: .gray, radius: 2, x: 0, y: 2)
                     }
                     .padding(.bottom, 4)
+                    .fullScreenCover(isPresented: $isOpenDetail) {
+                        FoodDetailView(food: food)
+                    }
                 } // MARK: - END VSTACK CONTENT
                 
                 // MARK: - IMAGE
@@ -55,7 +60,7 @@ struct TopCard: View {
                 
                 Spacer()
             } // MARK: - END HSTACK
-            .background(Constant.colorFFBC0B.clipShape(RoundedRectangle(cornerRadius: 6)))
+            .background(Constant.colorSubPimary.clipShape(RoundedRectangle(cornerRadius: 6)))
             .shadow(radius: 2)
             .padding(8)
         } // MARK: - END VSTACK

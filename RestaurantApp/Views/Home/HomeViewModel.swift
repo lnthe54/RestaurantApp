@@ -10,7 +10,7 @@ import Foundation
 class HomeViewModel: ObservableObject {
     // MARK: Property
     @Published var foodsBanner: [FoodOject] = []
-    @Published var popularFoods: [PopularFoodObject] = []
+    @Published var popularFoods: [FoodOject] = []
 
     private var foodService: FoodService
     

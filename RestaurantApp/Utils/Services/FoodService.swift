@@ -10,7 +10,7 @@ import Foundation
 
 protocol FoodServiceProtocol {
     func getFoodBanner(completion: @escaping ([FoodOject]) -> Void)
-    func getPopularFood(completion: @escaping ([PopularFoodObject]) -> Void)
+    func getPopularFood(completion: @escaping ([FoodOject]) -> Void)
 }
 
 class FoodService: FoodServiceProtocol {
@@ -23,8 +23,8 @@ class FoodService: FoodServiceProtocol {
         completion(dataTest)
     }
     
-    func getPopularFood(completion: @escaping ([PopularFoodObject]) -> Void) {
-        let dataTest: [PopularFoodObject] = Bundle.main.decode("AllFoods.json")
+    func getPopularFood(completion: @escaping ([FoodOject]) -> Void) {
+        let dataTest: [FoodOject] = Bundle.main.decode("AllFoods.json")
         completion(dataTest)
     }
 }

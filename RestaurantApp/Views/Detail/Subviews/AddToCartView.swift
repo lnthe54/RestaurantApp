@@ -13,7 +13,7 @@ struct AddToCartView: View {
             
         } label: {
             Spacer()
-            Text("Add to cart".uppercased())
+            Text("Thêm vào giỏ hàng".uppercased())
                 .font(.subheadline)
                 .fontWeight(.bold)
                 .foregroundColor(.white)

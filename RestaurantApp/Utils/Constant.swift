@@ -16,6 +16,5 @@ struct Constant {
     
     // MARK: - DATA TEST
     static let FeaturedFoods: [FoodOject] = Bundle.main.decode("food.json")
-    static let AllFoods: [PopularFoodObject] = Bundle.main.decode("AllFoods.json")
-    static let AllOtherTypes = [PopularFoodOtherObject].self
+    static let AllFoods: [FoodOject] = Bundle.main.decode("AllFoods.json")
 }

@@ -22,7 +22,7 @@ struct HomeView: View {
             
             // MARK: - TITLE
             HStack {
-                Text("What would you \n like to eat?")
+                Text("Bạn muốn ăn gì?")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                 Spacer()

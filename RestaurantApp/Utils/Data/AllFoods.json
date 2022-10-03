@@ -7,89 +7,84 @@
     "headline" : "high-protein meal",
     "image" : "beef-burger",
     "price" : "9.20",
-    "description" : "A traditional ground beef burger can be a good, high-protein meal—especially if it's grass-finished beef, which we'll tell you more about in a second.",
-    "OtherFoods" : [
-        
-        {
-            "id" : 1,
-            "name" : "Wild Salmon",
-            "headline":"low in calories",
-            "image" : "salmon-burger",
-            "price" : "18.20",
-            "description" : "when it comes to proteins, wild salmon is an MVP: It's rich in omega-3's, the healthy fatty acids you find in fish oils that can help lower your risk for heart disease and that fend off metabolism-slowing inflammation"
-        },
-        
-        {
-            "id" : 2,
-            "name" : "Black Bean",
-            "headline":"nutritional praise",
-            "image" : "black-bean-burger",
-            "price" : "10.00",
-            "description" : "Black beans pack 8 grams of protein and 7.5 grams of fiber in a 1/2-cup serving, but they're low in calories and free of saturated fat."
-        }
-    ]
-    
+    "stars": 5,
+    "description" : "A traditional ground beef burger can be a good, high-protein meal—especially if it's grass-finished beef, which we'll tell you more about in a second."
+  },
+  {
+      "id" : 2,
+      "name" : "Wild Salmon",
+      "headline":"low in calories",
+      "image" : "salmon-burger",
+      "price" : "18.20",
+      "stars": 5,
+      "description" : "when it comes to proteins, wild salmon is an MVP: It's rich in omega-3's, the healthy fatty acids you find in fish oils that can help lower your risk for heart disease and that fend off metabolism-slowing inflammation"
   },
   
   {
-    "id" : 2,
+      "id" : 3,
+      "name" : "Black Bean",
+      "headline":"nutritional praise",
+      "image" : "black-bean-burger",
+      "price" : "10.00",
+      "stars": 5,
+      "description" : "Black beans pack 8 grams of protein and 7.5 grams of fiber in a 1/2-cup serving, but they're low in calories and free of saturated fat."
+  },
+  
+  {
+    "id" : 4,
     "name" : "Cheese Pizza",
     "headline" : "To up the nutrients",
     "image" : "cheese-pizza",
     "price" : "9.20",
-    "description" : "To up the nutrients in cheese pizza, choose a whole-grain crust when possible and go “easy” on any high-fat cheese.",
-    "OtherFoods" : [
-        
-        {
-            "id" : 1,
-            "name" : "Veggie Pizza",
-            "headline" : "More veggies?",
-            "image" : "vegi-pizza",
-            "price" : "8.20",
-            "description" : "Health-ifying junk food recipes has to be one of the easiest ways to convince your friends that quitting sugar ain’t all that bad!"
-        },
-        
-        {
-            "id" : 2,
-            "name" : "Meat Pizza",
-            "headline":"Pizza Base",
-            "image" : "meat-pizza",
-            "price" : "10.00",
-            "description" : "Health-ifying junk food recipes has to be one of the easiest ways to convince your friends that quitting sugar ain’t all that bad!"
-        }
-    ]
-    
+    "stars": 5,
+    "description" : "To up the nutrients in cheese pizza, choose a whole-grain crust when possible and go “easy” on any high-fat cheese."
+  },
+  {
+      "id" : 5,
+      "name" : "Veggie Pizza",
+      "headline" : "More veggies?",
+      "image" : "vegi-pizza",
+      "price" : "8.20",
+      "stars": 5,
+      "description" : "Health-ifying junk food recipes has to be one of the easiest ways to convince your friends that quitting sugar ain’t all that bad!"
   },
   
   {
-    "id" : 3,
+      "id" : 6,
+      "name" : "Meat Pizza",
+      "headline":"Pizza Base",
+      "image" : "meat-pizza",
+      "price" : "10.00",
+      "stars": 5,
+      "description" : "Health-ifying junk food recipes has to be one of the easiest ways to convince your friends that quitting sugar ain’t all that bad!"
+  },
+  {
+    "id" : 7,
     "name" : "Drumstick",
     "headline" : "Vitamins and minerals",
     "image" : "chicken_fruits2",
     "price" : "51.55",
-    "description" : "all nutrition based on a combination of chicken available at Wegman’s and Wild Fork. Calories & nutrition will vary based on the specific source.",
-    "OtherFoods" : [
-        
-        {
-            "id" : 1,
-            "name" : "Whole Chicken",
-            "headline":"Yummy",
-            "image" : "chicken",
-            "price" : "108.27",
-            "description" : "all nutrition based on a combination of chicken available at Wegman’s and Wild Fork. Calories & nutrition will vary based on the specific source."
-        },
-        
-        {
-            "id" : 2,
-            "name" : "Wing",
-            "headline":"Pizza Base",
-            "image" : "chicken_fruits",
-            "price" : "10.00",
-            "description" : "all nutrition based on a combination of chicken available at Wegman’s and Wild Fork. Calories & nutrition will vary based on the specific source."
-        }
-    ]
-    
+    "stars": 5,
+    "description" : "all nutrition based on a combination of chicken available at Wegman’s and Wild Fork. Calories & nutrition will vary based on the specific source."
+  },
+  {
+      "id" : 8,
+      "name" : "Whole Chicken",
+      "headline":"Yummy",
+      "image" : "chicken",
+      "price" : "108.27",
+      "stars": 5,
+      "description" : "all nutrition based on a combination of chicken available at Wegman’s and Wild Fork. Calories & nutrition will vary based on the specific source."
   },
   
+  {
+      "id" : 9,
+      "name" : "Wing",
+      "headline":"Pizza Base",
+      "image" : "chicken_fruits",
+      "price" : "10.00",
+      "stars": 5,
+      "description" : "all nutrition based on a combination of chicken available at Wegman’s and Wild Fork. Calories & nutrition will vary based on the specific source."
+  }
   
 ]
