@@ -21,8 +21,9 @@
 ## Features
 
 * On boarding page with custom animation 
-* Doing...
+* Home View with all food
+* Detail View
 
 ## TO DO
 
-* Home View.
+* Cart View.
