@@ -10,8 +10,12 @@ import SwiftUI
 struct HomeToolBar: View {
     
     // MARK: - PROPERTY
-    @EnvironmentObject var viewModel: HomeViewModel
-
+    @ObservedObject var viewModel: HomeViewModel
+        
+    @State var isOpenCart: Bool = false
+    @Binding var itemCart: Int
+    var hihi: Int = 0
+    
     // MARK: - BODY
     var body: some View {
         
@@ -29,21 +33,31 @@ struct HomeToolBar: View {
             // MARK: - CART BUTTON
             Button {
                 // Action
+                isOpenCart = true
             } label: {
-                Image(systemName: "cart")
-                    .font(.title2)
-            } // MARK: - END SEARCH BUTTON
+                ZStack {
+                    Image(systemName: "cart")
+                        .font(.title2)
+                    
+                    if self.itemCart > 0 {
+                        ZStack {
+                            Circle()
+                                .fill(Color.red)
+                                .frame(maxWidth: 20)
+                            Text("\(self.itemCart)")
+                                .font(.system(size: 12))
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.white)
+                        }
+                        .frame(width: 20, height: 20, alignment: .topLeading)
+                        .padding([.bottom, .trailing])
+                    }
+                }
+            } // MARK: - END CART BUTTON
             .foregroundColor(.black)
-
-
+            .fullScreenCover(isPresented: $isOpenCart) {
+                // Do something
+            }
         } // MARK: - END HSTACK
-    }
-}
-
-struct HomeToolBar_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeToolBar()
-            .previewLayout(.sizeThatFits)
-            .padding()
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct HomeView: View {
     
@@ -16,10 +17,9 @@ struct HomeView: View {
         // MARK: - VSTACK
         VStack {
             // MARK: - TOOL BAR
-            HomeToolBar()
+            HomeToolBar(viewModel: viewModel, itemCart: $viewModel.itemOfCart)
                 .padding(8)
                 .padding(.top, 56)
-                .environmentObject(viewModel)
             
             // MARK: - TITLE
             HStack {
@@ -34,9 +34,8 @@ struct HomeView: View {
             ScrollView(showsIndicators: false) {
                 VStack {
                     
-                    FeatureFoodView()
+                    FeatureFoodView(viewModel: viewModel)
                         .frame(height: 145)
-                        .environmentObject(viewModel)
                     
                     PopularFoodView()
                         .padding()
@@ -51,6 +50,11 @@ struct HomeView: View {
         .edgesIgnoringSafeArea(.all)
         .onAppear {
             viewModel.onAppear()
+        }
+        .toast(isPresenting: self.$viewModel.isAddItem) {
+            AlertToast(displayMode: .hud,
+                       type: .complete(.green),
+                       title: "Thêm món ăn thành công!")
         }
     }
 }

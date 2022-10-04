@@ -12,6 +12,8 @@ class HomeViewModel: ObservableObject {
     @Published var foodsBanner: [FoodOject] = []
     @Published var popularFoods: [FoodOject] = []
     @Published var timeText: String = ""
+    @Published var itemOfCart: Int = UserDataDefaults.shared.getCartFoods().count
+    @Published var isAddItem: Bool = false
     
     private var foodService: FoodService
     
@@ -49,11 +51,13 @@ class HomeViewModel: ObservableObject {
         let hour = Calendar.current.component(.hour, from: Date())
 
         switch hour {
-        case 6..<13 :
+        case 6..<10:
             timeText = "Chào buổi sáng"
+        case 10..<13:
+            timeText = "Chào buổi trưa"
         case 13..<17:
             timeText = "Chào buổi chiều"
-        case 17..<22:
+        case 17..<24:
             timeText = "Chào buổi tối"
         default:
             timeText = ""

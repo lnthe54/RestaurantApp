@@ -10,6 +10,7 @@ import SwiftUI
 struct TopCard: View {
     
     // MARK: - PROPERTY
+    @ObservedObject var homeViewModel: HomeViewModel
     let food: FoodOject
     @State private var isOpenDetail: Bool = false
 
@@ -48,7 +49,10 @@ struct TopCard: View {
                     }
                     .padding(.bottom, 4)
                     .fullScreenCover(isPresented: $isOpenDetail) {
-                        FoodDetailView(food: food)
+                        FoodDetailView(viewModel: FoodDetailViewModel(),
+                                       isAddItem: self.$homeViewModel.isAddItem,
+                                       itemOfCart: self.$homeViewModel.itemOfCart,
+                                       food: food)
                     }
                 } // MARK: - END VSTACK CONTENT
                 
@@ -69,7 +73,7 @@ struct TopCard: View {
 
 struct TopCard_Previews: PreviewProvider {
     static var previews: some View {
-        TopCard(food: Constant.FeaturedFoods[0])
+        TopCard(homeViewModel: HomeViewModel(), food: Constant.FeaturedFoods[0])
             .previewLayout(.sizeThatFits)
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct PopularFoodView: View {
     // MARK: - PROPERTY
@@ -37,7 +38,7 @@ struct PopularFoodView: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                         .fullScreenCover(item: $selectedFood) { selected in
-                            FoodDetailView(food: selected)
+                            FoodDetailView(viewModel: FoodDetailViewModel(), isAddItem: self.$homeViewModel.isAddItem, itemOfCart: self.$homeViewModel.itemOfCart, food: selected)
                         }
                     }
                 }

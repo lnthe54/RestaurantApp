@@ -10,7 +10,7 @@ import SwiftUI
 struct FeatureFoodView: View {
     
     // MARK: - Property
-    @EnvironmentObject var viewModel: HomeViewModel
+    @ObservedObject var viewModel: HomeViewModel
     @State var slide = 1
     @State var forward = true
     
@@ -18,7 +18,7 @@ struct FeatureFoodView: View {
         // MARK: - ZSTACK
         TabView(selection: $slide) {
             ForEach(viewModel.foodsBanner) { food in
-                TopCard(food: food)
+                TopCard(homeViewModel: viewModel, food: food)
                     .tag(food.id)
             }
         }
@@ -47,8 +47,7 @@ struct FeatureFoodView: View {
 
 struct FeatureFoodView_Previews: PreviewProvider {
     static var previews: some View {
-        FeatureFoodView()
-            .environmentObject(HomeViewModel())
+        FeatureFoodView(viewModel: HomeViewModel())
             .previewLayout(.sizeThatFits)
             .padding()
     }
