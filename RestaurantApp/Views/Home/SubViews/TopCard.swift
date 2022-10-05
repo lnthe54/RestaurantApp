@@ -12,8 +12,7 @@ struct TopCard: View {
     // MARK: - PROPERTY
     @ObservedObject var homeViewModel: HomeViewModel
     let food: FoodOject
-    @State private var isOpenDetail: Bool = false
-
+    
     var body: some View {
         
         // MARK: - VSTACK
@@ -31,11 +30,13 @@ struct TopCard: View {
                         .fontWeight(.semibold)
                     
                     // MARK: - BUY NOW BUTTON
-                    Button {
-                        // Action
-                        self.isOpenDetail = true
+                    NavigationLink {
+                        FoodDetailView(viewModel: FoodDetailViewModel(),
+                                       isAddItem: self.$homeViewModel.isAddItem,
+                                       itemOfCart: self.$homeViewModel.itemOfCart,
+                                       food: food)
+                            .navigationBarHidden(true)
                     } label: {
-                        // MARK: - BUY NOW ZSTACK
                         ZStack {
                             Text(" Mua ngay ")
                                 .font(.body)
@@ -48,12 +49,6 @@ struct TopCard: View {
                         .shadow(color: .gray, radius: 2, x: 0, y: 2)
                     }
                     .padding(.bottom, 4)
-                    .fullScreenCover(isPresented: $isOpenDetail) {
-                        FoodDetailView(viewModel: FoodDetailViewModel(),
-                                       isAddItem: self.$homeViewModel.isAddItem,
-                                       itemOfCart: self.$homeViewModel.itemOfCart,
-                                       food: food)
-                    }
                 } // MARK: - END VSTACK CONTENT
                 
                 // MARK: - IMAGE

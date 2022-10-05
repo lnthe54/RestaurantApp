@@ -13,10 +13,12 @@ struct ContentView: View {
     private let isFirstInstall: Bool = UserDataDefaults.shared.isFirstInstall
 
     var body: some View {
-        if isFirstInstall {
-            HomeView(viewModel: HomeViewModel())
-        } else {
-            OnboardingView(viewModel: .init())
+        NavigationView {
+            if isFirstInstall {
+                HomeView(viewModel: HomeViewModel())
+            } else {
+                OnboardingView(viewModel: .init())
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ struct PopularFoodView: View {
     @State private var selectedFood: FoodOject!
     
     private var gridItems = [GridItem(.flexible()), GridItem(.flexible())]
-
+    
     var body: some View {
         ZStack {
             VStack {
@@ -29,17 +29,15 @@ struct PopularFoodView: View {
                 
                 LazyVGrid(columns: gridItems, spacing: 10) {
                     ForEach(homeViewModel.popularFoods) { food in
-                        Button {
-                            self.selectedFood = food
+                        NavigationLink {
+                            FoodDetailView(viewModel: FoodDetailViewModel(), isAddItem: self.$homeViewModel.isAddItem, itemOfCart: self.$homeViewModel.itemOfCart, food: food)
+                                .navigationBarHidden(true)
                         } label: {
                             FoodVerticalView(food: food)
                                 .background(Color.white.clipShape(CornerRadiusShape()))
                                 .shadow(radius: 4)
                         }
                         .buttonStyle(PlainButtonStyle())
-                        .fullScreenCover(item: $selectedFood) { selected in
-                            FoodDetailView(viewModel: FoodDetailViewModel(), isAddItem: self.$homeViewModel.isAddItem, itemOfCart: self.$homeViewModel.itemOfCart, food: selected)
-                        }
                     }
                 }
             }

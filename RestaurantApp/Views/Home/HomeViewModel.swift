@@ -23,6 +23,7 @@ class HomeViewModel: ObservableObject {
     }
 
     func onAppear() {
+        UserDataDefaults.shared.isFirstInstall = true
         getTextFromTime()
         getAllData()
     }

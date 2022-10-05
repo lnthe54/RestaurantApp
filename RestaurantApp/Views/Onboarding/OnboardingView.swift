@@ -24,10 +24,25 @@ struct OnboardingView: View {
                     Spacer()
 
                     if page == viewModel.pages.last {
-                        Button {
-                            // Action
-                            UserDataDefaults.shared.isFirstInstall = true
-                            isOpenHome = true
+//                        Button {
+//                            // Action
+//                            UserDataDefaults.shared.isFirstInstall = true
+//                            isOpenHome = true
+//                        } label: {
+//                            Text("Bắt đầu")
+//                                .font(.headline)
+//                                .frame(width: 200, height: 40, alignment: .center)
+//                                .foregroundColor(.white)
+//                                .background(Constant.colorPimary)
+//                                .cornerRadius(10)
+//                        }
+//                        .padding(.bottom, 30)
+//                        .fullScreenCover(isPresented: $isOpenHome) {
+//                            HomeView(viewModel: HomeViewModel())
+//                        }
+                        NavigationLink {
+                            HomeView(viewModel: HomeViewModel())
+                                .navigationBarHidden(true)
                         } label: {
                             Text("Bắt đầu")
                                 .font(.headline)
@@ -37,9 +52,6 @@ struct OnboardingView: View {
                                 .cornerRadius(10)
                         }
                         .padding(.bottom, 30)
-                        .fullScreenCover(isPresented: $isOpenHome) {
-                            HomeView(viewModel: HomeViewModel())
-                        }
                     }
 
                     Spacer()
