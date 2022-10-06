@@ -4,7 +4,7 @@
     "id" : 1,
     "image" : "chicken_fruits",
     "name": "Rice",
-    "price": "10",
+    "price": 10,
     "headline": "Eat Quality food from your favourite restaurant.",
     "stars": 5,
     "description": "all nutrition based on a combination of chicken available at Wegman’s and Wild Fork. Calories & nutrition will vary based on the specific source."
@@ -13,7 +13,7 @@
     "id" : 2,
     "image" : "chicken_fruits2",
     "name": "Rice",
-    "price": "10",
+    "price": 10,
     "headline": "Tired of ordering the same old apps?\n Check out our chef’s latest creation",
     "stars": 5,
     "description": ""
@@ -22,7 +22,7 @@
     "id" : 3,
     "image" : "chicken",
     "name": "Rice",
-    "price": "10",
+    "price": 10,
     "headline": "Ready for the weekend?\n Kick it off the right way with 50% off all pizza",
     "stars": 5,
     "description": ""
@@ -31,7 +31,7 @@
     "id" : 5,
     "image" : "fruits",
     "name": "Fruits",
-    "price": "10",
+    "price": 10,
     "headline": "What better way to celebrate the holidays than with a mint chiclen fiesta?",
     "stars": 5,
     "description": ""
@@ -41,7 +41,7 @@
     "id" : 6,
     "image" : "mixed_food",
     "name": "Rice",
-    "price": "10",
+    "price": 10,
     "headline": "Eat Quality food\n from your favourite\n restaurant.",
     "stars": 5,
     "description": ""
@@ -50,7 +50,7 @@
     "id" : 7,
     "image" : "pizza",
     "name": "Pizza",
-    "price": "10",
+    "price": 10,
     "headline": "Ready for the weekend?\n Kick it off the right way with 50% off all pizza",
     "stars": 5,
     "description": ""
@@ -60,7 +60,7 @@
       "id": 8,
       "image": "rice",
       "name": "Rice",
-      "price": "10",
+      "price": 10,
       "headline": "Eat Quality food\n from your favourite\n restaurant.",
       "stars": 5,
       "description": ""

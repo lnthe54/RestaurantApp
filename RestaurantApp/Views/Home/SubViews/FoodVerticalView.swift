@@ -41,12 +41,12 @@ struct FoodVerticalView: View {
                 } // MARK: - END RATING VIEW
                 
                 HStack(spacing: 5) {
-                    Text("vnd")
+                    Text("vnđ")
                         .foregroundColor(Constant.colorPimary)
                         .font(.headline)
                         .fontWeight(.bold)
                     
-                    Text(food.price)
+                    Text(food.price.convertToString())
                         .font(.headline)
                         .fontWeight(.bold)
                     
@@ -54,11 +54,9 @@ struct FoodVerticalView: View {
                     
                     Button {
                         // Action
-                        withAnimation(.easeInOut(duration: 2)) {
-                            self.homeViewModel.isAddItem = true
-                            self.homeViewModel.addFoodToCart(food, quantity: 1)
-                            self.homeViewModel.itemOfCart = UserDataDefaults.shared.getCartFoods().count
-                        }
+                        self.homeViewModel.isAddItem = true
+                        self.homeViewModel.addFoodToCart(food, quantity: 1)
+                        self.homeViewModel.itemOfCart = UserDataDefaults.shared.getCartFoods().count
                     } label: {
                         Spacer()
                         Image(systemName: "plus")

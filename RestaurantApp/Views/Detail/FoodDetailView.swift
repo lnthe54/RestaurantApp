@@ -94,7 +94,7 @@ struct FoodDetailView: View {
                                     .fontWeight(.bold)
                                 Spacer()
                                 
-                                Text(food.price)
+                                Text(food.price.convertToString())
                                     .font(.title3)
                                     .fontWeight(.bold)
                                     .foregroundColor(Constant.color212121)

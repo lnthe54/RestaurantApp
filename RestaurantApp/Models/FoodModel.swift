@@ -13,7 +13,7 @@ struct FoodOject: Codable, Identifiable {
     let image: String
     let headline: String
     var stars: Int
-    let price: String
+    let price: Int
     let description: String
     var quantity: Int?
 }
@@ -23,10 +23,10 @@ class CartObject: NSObject, NSCoding, Identifiable {
     let id: Int
     let name: String
     let image: String
-    let price: String
+    let price: Int
     var quantity: Int
     
-    init(id: Int, name: String, image: String, price: String, quantity: Int) {
+    init(id: Int, name: String, image: String, price: Int, quantity: Int) {
         self.id = id
         self.name = name
         self.image = image
@@ -38,7 +38,7 @@ class CartObject: NSObject, NSCoding, Identifiable {
         let id = coder.decodeInteger(forKey: "id")
         let name = coder.decodeObject(forKey: "name") as! String
         let image = coder.decodeObject(forKey: "image") as! String
-        let price = coder.decodeObject(forKey: "price") as! String
+        let price = coder.decodeInteger(forKey: "price")
         let quantity = coder.decodeInteger(forKey: "quantity")
         
         self.init(id: id, name: name, image: image, price: price, quantity: quantity)
