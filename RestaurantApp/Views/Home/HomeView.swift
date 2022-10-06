@@ -33,13 +33,11 @@ struct HomeView: View {
             // MARK: - SUB CONTENT
             ScrollView(showsIndicators: false) {
                 VStack {
-                    
                     FeatureFoodView(viewModel: viewModel)
                         .frame(height: 145)
                     
-                    PopularFoodView()
+                    PopularFoodView(homeViewModel: viewModel)
                         .padding()
-                        .environmentObject(viewModel)
                 }
             }
             

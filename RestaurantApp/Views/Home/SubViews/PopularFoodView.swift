@@ -10,11 +10,9 @@ import AlertToast
 
 struct PopularFoodView: View {
     // MARK: - PROPERTY
-    @EnvironmentObject var homeViewModel: HomeViewModel
-    
-    @State private var selectedFood: FoodOject!
-    
-    private var gridItems = [GridItem(.flexible()), GridItem(.flexible())]
+    @ObservedObject var homeViewModel: HomeViewModel
+        
+    var gridItems = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         ZStack {
@@ -33,7 +31,8 @@ struct PopularFoodView: View {
                             FoodDetailView(viewModel: FoodDetailViewModel(), isAddItem: self.$homeViewModel.isAddItem, itemOfCart: self.$homeViewModel.itemOfCart, food: food)
                                 .navigationBarHidden(true)
                         } label: {
-                            FoodVerticalView(food: food)
+                            FoodVerticalView(homeViewModel: homeViewModel,
+                                             food: food)
                                 .background(Color.white.clipShape(CornerRadiusShape()))
                                 .shadow(radius: 4)
                         }
@@ -47,9 +46,8 @@ struct PopularFoodView: View {
 
 struct PopularView_Previews: PreviewProvider {
     static var previews: some View {
-        PopularFoodView()
+        PopularFoodView(homeViewModel: HomeViewModel())
             .previewLayout(.sizeThatFits)
             .padding()
-            .environmentObject(HomeViewModel())
     }
 }

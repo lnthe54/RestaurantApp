@@ -16,6 +16,7 @@ struct ContentView: View {
         NavigationView {
             if isFirstInstall {
                 HomeView(viewModel: HomeViewModel())
+                    .navigationBarHidden(true)
             } else {
                 OnboardingView(viewModel: .init())
             }

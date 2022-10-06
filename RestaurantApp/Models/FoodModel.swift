@@ -18,7 +18,7 @@ struct FoodOject: Codable, Identifiable {
     var quantity: Int?
 }
 
-class CartObject: NSObject, NSCoding {
+class CartObject: NSObject, NSCoding, Identifiable {
     
     let id: Int
     let name: String

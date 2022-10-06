@@ -31,9 +31,10 @@ struct HomeToolBar: View {
             Spacer()
             
             // MARK: - CART BUTTON
-            Button {
-                // Action
-                isOpenCart = true
+            NavigationLink {
+                // Open cart view
+                CartView(cartViewModel: CartViewModel(), itemOfCart: $itemCart)
+                    .navigationBarHidden(true)
             } label: {
                 ZStack {
                     Image(systemName: "cart")
@@ -53,11 +54,8 @@ struct HomeToolBar: View {
                         .padding([.bottom, .trailing])
                     }
                 }
-            } // MARK: - END CART BUTTON
-            .foregroundColor(.black)
-            .fullScreenCover(isPresented: $isOpenCart) {
-                // Do something
             }
+            .foregroundColor(.black)
         } // MARK: - END HSTACK
     }
 }

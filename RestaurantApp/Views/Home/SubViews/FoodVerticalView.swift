@@ -10,8 +10,10 @@ import SwiftUI
 struct FoodVerticalView: View {
     
     // MARK: - PROPERTY
+    @ObservedObject var homeViewModel: HomeViewModel
+
     let food: FoodOject
-    
+
     var body: some View {
         // MARK: - ZSTACK
         ZStack {
@@ -52,8 +54,10 @@ struct FoodVerticalView: View {
                     
                     Button {
                         // Action
-                        withAnimation(.easeOut) {
-                            // Add to cart
+                        withAnimation(.easeInOut(duration: 2)) {
+                            self.homeViewModel.isAddItem = true
+                            self.homeViewModel.addFoodToCart(food, quantity: 1)
+                            self.homeViewModel.itemOfCart = UserDataDefaults.shared.getCartFoods().count
                         }
                     } label: {
                         Spacer()
@@ -66,19 +70,9 @@ struct FoodVerticalView: View {
                     .background(Constant.colorPimary)
                     .cornerRadius(50)
                     .frame(width: 50)
-
                 }
             }
         } // MARK: - END ZSTACK
         .padding(12)
-    }
-}
-
-struct FoodVerticalView_Previews: PreviewProvider {
-    static var previews: some View {
-        FoodVerticalView(food: Constant.AllFoods[0])
-            .previewLayout(.sizeThatFits)
-            .frame(width: 180)
-            .padding()
     }
 }
