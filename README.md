@@ -8,6 +8,7 @@
 <p align="center">
 <img src="resources/intro.gif" height="600">
 <img src="resources/home.png" height="600">
+<img src="resources/cart.png" height="600">
 &nbsp; &nbsp; &nbsp; &nbsp;
 </p>
 
