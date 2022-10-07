@@ -13,18 +13,35 @@ struct FeatureFoodView: View {
     @ObservedObject var viewModel: HomeViewModel
     @State var slide = 1
     @State var forward = true
-    
+    private let dotAppearance = UIPageControl.appearance()
+
     var body: some View {
-        // MARK: - ZSTACK
-        TabView(selection: $slide) {
-            ForEach(viewModel.foodsBanner) { food in
-                TopCard(homeViewModel: viewModel, food: food)
-                    .tag(food.id)
+        // MARK: - VSTACK
+        VStack {
+            TabView(selection: $slide) {
+                ForEach(viewModel.foodsBanner) { food in
+                    TopCard(homeViewModel: viewModel, food: food)
+                        .tag(food.id)
+                }
             }
-        }
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-        .onAppear {
-            autoSwitchTab()
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .onAppear {
+                autoSwitchTab()
+            }
+            
+            Spacer()
+            
+            HStack(alignment: .center, spacing: 3) {
+                ForEach(0..<viewModel.foodsBanner.count, id: \.self) { index in
+                    if (self.slide - 1) == index {
+                        Image(systemName: "minus")
+                            .foregroundColor(Constant.colorPimary)
+                    } else {
+                        Image(systemName: "minus")
+                            .foregroundColor(.gray)
+                    }
+                }
+            }
         }
     }
     
@@ -32,14 +49,12 @@ struct FeatureFoodView: View {
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
             if forward {
                 slide += 1
-                if slide == viewModel.foodsBanner.count {
+                if slide == viewModel.foodsBanner.count + 1 {
                     forward = false
                 }
             } else {
-                slide -= 1
-                if slide == 0 {
-                    forward = true
-                }
+                slide = 1
+                forward = true
             }
         }
     }
