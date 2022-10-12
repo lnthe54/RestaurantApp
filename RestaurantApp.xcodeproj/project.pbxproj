@@ -13,6 +13,9 @@
 		994CD56D28E71E75007DF1B7 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CD56C28E71E75007DF1B7 /* OnboardingViewModel.swift */; };
 		994CD56F28E73FC3007DF1B7 /* UserDataDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CD56E28E73FC3007DF1B7 /* UserDataDefaults.swift */; };
 		995783F928E9F6F300B6A8E6 /* FoodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995783F828E9F6F300B6A8E6 /* FoodService.swift */; };
+		99953BCD28F6E233000593EB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99953BCC28F6E233000593EB /* Network.swift */; };
+		99953BCF28F6E2BB000593EB /* URLPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99953BCE28F6E2BB000593EB /* URLPath.swift */; };
+		99953BD128F6E331000593EB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99953BD028F6E331000593EB /* API.swift */; };
 		99D6A34028EDAA0B00BC2983 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A33F28EDAA0B00BC2983 /* CartView.swift */; };
 		99D6A34228EDAA4100BC2983 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A34128EDAA4100BC2983 /* CartViewModel.swift */; };
 		99D6A34528EDE3D700BC2983 /* ItemCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A34428EDE3D700BC2983 /* ItemCartView.swift */; };
@@ -50,6 +53,10 @@
 		994CD56C28E71E75007DF1B7 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		994CD56E28E73FC3007DF1B7 /* UserDataDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataDefaults.swift; sourceTree = "<group>"; };
 		995783F828E9F6F300B6A8E6 /* FoodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodService.swift; sourceTree = "<group>"; };
+		99953BCC28F6E233000593EB /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		99953BCE28F6E2BB000593EB /* URLPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPath.swift; sourceTree = "<group>"; };
+		99953BD028F6E331000593EB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		99953BD228F6ED9C000593EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		99D6A33F28EDAA0B00BC2983 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		99D6A34128EDAA4100BC2983 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		99D6A34428EDE3D700BC2983 /* ItemCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCartView.swift; sourceTree = "<group>"; };
@@ -105,6 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				995783F828E9F6F300B6A8E6 /* FoodService.swift */,
+				99953BCC28F6E233000593EB /* Network.swift */,
+				99953BCE28F6E2BB000593EB /* URLPath.swift */,
+				99953BD028F6E331000593EB /* API.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -148,6 +158,7 @@
 		99E7B62C28E44150001D14F3 /* RestaurantApp */ = {
 			isa = PBXGroup;
 			children = (
+				99953BD228F6ED9C000593EB /* Info.plist */,
 				99E7B65A28E446CB001D14F3 /* Models */,
 				99E7B64428E441E3001D14F3 /* Views */,
 				99E7B64128E441A8001D14F3 /* Utils */,
@@ -406,10 +417,12 @@
 				99D6A34528EDE3D700BC2983 /* ItemCartView.swift in Sources */,
 				99E7B64F28E4436B001D14F3 /* HomeToolBar.swift in Sources */,
 				99E7B66628E454F6001D14F3 /* CustomShape.swift in Sources */,
+				99953BCD28F6E233000593EB /* Network.swift in Sources */,
 				995783F928E9F6F300B6A8E6 /* FoodService.swift in Sources */,
 				9947DE3728EBC608008213BB /* FoodDetailViewModel.swift in Sources */,
 				994CD56F28E73FC3007DF1B7 /* UserDataDefaults.swift in Sources */,
 				99E7B65C28E446DA001D14F3 /* FoodModel.swift in Sources */,
+				99953BCF28F6E2BB000593EB /* URLPath.swift in Sources */,
 				99E7B65128E4463A001D14F3 /* FeatureFoodView.swift in Sources */,
 				99FD5F8C28E587F1007F0D41 /* FoodDetailView.swift in Sources */,
 				99E7B65E28E44719001D14F3 /* Bundle+Extension.swift in Sources */,
@@ -424,6 +437,7 @@
 				99D6A34228EDAA4100BC2983 /* CartViewModel.swift in Sources */,
 				99E7B63028E44150001D14F3 /* ContentView.swift in Sources */,
 				99E7B64728E44291001D14F3 /* HomeView.swift in Sources */,
+				99953BD128F6E331000593EB /* API.swift in Sources */,
 				99E7B65328E44646001D14F3 /* TopCard.swift in Sources */,
 				994CD56D28E71E75007DF1B7 /* OnboardingViewModel.swift in Sources */,
 				99D6A34028EDAA0B00BC2983 /* CartView.swift in Sources */,
@@ -565,6 +579,7 @@
 				DEVELOPMENT_TEAM = 678Z7S5FB3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RestaurantApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -596,6 +611,7 @@
 				DEVELOPMENT_TEAM = 678Z7S5FB3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RestaurantApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

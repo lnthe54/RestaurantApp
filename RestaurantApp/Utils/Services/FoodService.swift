@@ -19,12 +19,14 @@ class FoodService: FoodServiceProtocol {
     }
     
     func getFoodBanner(completion: @escaping ([FoodOject]) -> Void) {
-        let dataTest: [FoodOject] = Bundle.main.decode("food.json")
-        completion(dataTest)
+        API.shared.getFoodBanners { foodBanners in
+            completion(foodBanners)
+        }
     }
     
     func getPopularFood(completion: @escaping ([FoodOject]) -> Void) {
-        let dataTest: [FoodOject] = Bundle.main.decode("AllFoods.json")
-        completion(dataTest)
+        API.shared.getFoodPopulars { foodPopulars in
+            completion(foodPopulars)
+        }
     }
 }

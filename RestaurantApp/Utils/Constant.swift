@@ -9,11 +9,15 @@ import SwiftUI
 
 struct Constant {
     
+    // MARK: - COLOR
     static let colorPimary: Color = Color(hex: "#FF6600")
     static let colorSubPimary: Color = Color(hex: "#FF751A")
     static let colorEFEFEF: Color = Color(hex: "#EFEFEF")
     static let colorFFBC0B: Color = Color(hex: "#FFBC0B") // Yellow
     static let color212121: Color = Color(hex: "#212121")
+    
+    // MARK: - NETWORK
+    static let HOST_URL: String = "https://theln-food.herokuapp.com/api"
     
     // MARK: - DATA TEST
     static let FeaturedFoods: [FoodOject] = Bundle.main.decode("food.json")

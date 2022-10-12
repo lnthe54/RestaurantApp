@@ -32,8 +32,8 @@ struct FeatureFoodView: View {
             Spacer()
             
             HStack(alignment: .center, spacing: 3) {
-                ForEach(0..<viewModel.foodsBanner.count, id: \.self) { index in
-                    if (self.slide - 1) == index {
+                ForEach(viewModel.foodsBanner) { foodBanner in
+                    if self.slide == foodBanner.id {
                         Image(systemName: "minus")
                             .foregroundColor(Constant.colorPimary)
                     } else {
@@ -49,7 +49,7 @@ struct FeatureFoodView: View {
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
             if forward {
                 slide += 1
-                if slide == viewModel.foodsBanner.count + 1 {
+                if slide == viewModel.foodsBanner.count {
                     forward = false
                 }
             } else {
