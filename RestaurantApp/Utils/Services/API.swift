@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum APIState {
+    case loading
+    case success
+}
+
 class API {
     
     static let shared = API()

@@ -15,6 +15,9 @@ class HomeViewModel: ObservableObject {
     @Published var itemOfCart: Int = UserDataDefaults.shared.getCartFoods().count
     @Published var isAddItem: Bool = false
     
+    @Published var state: APIState = .loading
+    @Published var isLoading: Bool = false
+    
     private var foodService: FoodService
     
     init(_ foodsBanner: [FoodOject] = [], foodService: FoodService = FoodService()) {
@@ -31,6 +34,8 @@ class HomeViewModel: ObservableObject {
     private func getAllData() {
         let group = DispatchGroup()
         
+        state = .loading
+        isLoading = true
         group.enter()
         self.foodService.getFoodBanner { foods in
             self.foodsBanner = foods
@@ -45,6 +50,8 @@ class HomeViewModel: ObservableObject {
         
         group.notify(queue: .main) {
             // Update
+            self.state = .success
+            self.isLoading = false
         }
     }
     
