@@ -43,11 +43,11 @@ struct FoodVerticalView: View {
                 HStack(spacing: 5) {
                     Text("vnđ")
                         .foregroundColor(Constant.colorPimary)
-                        .font(.headline)
+                        .font(.system(size: 13))
                         .fontWeight(.bold)
                     
                     Text(food.price.convertToString())
-                        .font(.headline)
+                        .font(.system(size: 13))
                         .fontWeight(.bold)
                     
                     Spacer()
