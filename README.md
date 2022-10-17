@@ -25,7 +25,7 @@
 * On boarding page with custom animation 
 * Home View with all food
 * Detail View
+* Cart View.
 
 ## TO DO
 
-* Cart View.
