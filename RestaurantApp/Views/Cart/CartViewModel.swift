@@ -11,6 +11,8 @@ class CartViewModel: ObservableObject {
     // MARK: Property
     @Published var cartFoods: [CartObject] = []
     @Published var totalMoney: Double = 0
+    @Published var isBuying: Bool = false
+    @Published var isBought: Bool = false
     
     init() {
         self.cartFoods = UserDataDefaults.shared.getCartFoods()
@@ -58,5 +60,17 @@ class CartViewModel: ObservableObject {
         }
         
         return totalMoney
+    }
+    
+    func buyOrder(completion: @escaping () -> Void) {
+        self.isBuying = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.cartFoods.removeAll()
+            UserDataDefaults.shared.setCartFoods(self.cartFoods)
+            self.isBuying = false
+            self.isBought = true
+            
+            completion()
+        }
     }
 }
