@@ -12,6 +12,7 @@ struct HomeView: View {
     
     // MARK: - Property
     @ObservedObject var viewModel: HomeViewModel
+    @ObservedObject var notificationManager = LocalNotificationManager()
 
     var body: some View {
         // MARK: - VSTACK
@@ -49,6 +50,7 @@ struct HomeView: View {
             .background(Constant.colorEFEFEF)
             .edgesIgnoringSafeArea(.all)
             .onAppear {
+                notificationManager.sendNotification()
                 viewModel.onAppear()
             }
             .toast(isPresenting: self.$viewModel.isAddItem) {
